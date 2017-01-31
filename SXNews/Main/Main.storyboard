@@ -14,7 +14,7 @@
             <objects>
                 <navigationController id="Fb3-j1-el5" customClass="SXNavController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="zIR-RP-tBz"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3DF-eT-EV2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3DF-eT-EV2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -52,7 +52,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34D-Vv-B3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-716" y="487"/>
+            <point key="canvasLocation" x="-1287" y="636"/>
         </scene>
         <!--Item-->
         <scene sceneID="cea-Qr-jAq">

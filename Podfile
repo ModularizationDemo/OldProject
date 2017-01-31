@@ -20,5 +20,9 @@ pod 'Tools', '1'
 
 pod 'Search-Category', :path => '../Search-Category'
 pod 'Search', :path => '../Search'
+
+pod 'Weather-Category', :path => '../Weather-Category'
+pod 'Weather', :path => '../Weather'
+
 pod 'Detail-Category', :path => '../Detail-Category'
 end

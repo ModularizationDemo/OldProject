@@ -4,19 +4,23 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "BB2AF5F39BE0BF385775B9FA5FCC5462CF075F63" : 9223372036854775807,
-    "36FEC4AAC42DA4CFB605473512E2F0CB493DA478" : 9223372036854775807,
+    "FAB9AAE724E8D8FC219FC6ABC0A91AE813AE4555" : 9223372036854775807,
     "2FD2F6C1F82A663EEC4FC3079F1F83B621B0E505" : 9223372036854775807,
+    "BB2AF5F39BE0BF385775B9FA5FCC5462CF075F63" : 9223372036854775807,
+    "7E8AF3F607EC698346A50F1A0D26E15C83181F05" : 9223372036854775807,
     "4F373D8F336AD96F205F46B25702C4C865B55BE0" : 9223372036854775807,
-    "FAB9AAE724E8D8FC219FC6ABC0A91AE813AE4555" : 9223372036854775807
+    "36FEC4AAC42DA4CFB605473512E2F0CB493DA478" : 9223372036854775807,
+    "45A704468F3D7C4E61ADD1E2A05FE684623DC5FF" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0DEDC831-DD3D-43C3-9649-281A8A552C9E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "BB2AF5F39BE0BF385775B9FA5FCC5462CF075F63" : "Detail-Category\/",
-    "36FEC4AAC42DA4CFB605473512E2F0CB493DA478" : "..",
+    "FAB9AAE724E8D8FC219FC6ABC0A91AE813AE4555" : "Search-Category\/",
     "2FD2F6C1F82A663EEC4FC3079F1F83B621B0E505" : "Search\/",
+    "BB2AF5F39BE0BF385775B9FA5FCC5462CF075F63" : "Detail-Category\/",
+    "7E8AF3F607EC698346A50F1A0D26E15C83181F05" : "Weather\/",
     "4F373D8F336AD96F205F46B25702C4C865B55BE0" : "OldProject\/",
-    "FAB9AAE724E8D8FC219FC6ABC0A91AE813AE4555" : "Search-Category\/"
+    "36FEC4AAC42DA4CFB605473512E2F0CB493DA478" : "..",
+    "45A704468F3D7C4E61ADD1E2A05FE684623DC5FF" : "Weather-Category\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "SXNews",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -33,9 +37,19 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "36FEC4AAC42DA4CFB605473512E2F0CB493DA478"
     },
     {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ModularizationDemo\/Weather-Category.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "45A704468F3D7C4E61ADD1E2A05FE684623DC5FF"
+    },
+    {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dsxNiubility\/SXNews.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4F373D8F336AD96F205F46B25702C4C865B55BE0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ModularizationDemo\/Weather.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7E8AF3F607EC698346A50F1A0D26E15C83181F05"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ModularizationDemo\/Detail-Category.git",

@@ -8,12 +8,9 @@
 
 #import "SXMainViewController.h"
 #import "SXNewsTableViewPage.h"
-#import "SXWeatherView.h"
-#import "SXWeatherDetailPage.h"
 #import "SXTitleLable.h"
-#import "SXWeatherEntity.h"
-#import "SXWeatherViewModel.h"
 #import <Search-Category/Lothar+Search.h>
+#import <Weather-Category/Lothar+Weather.h>
 
 @interface SXMainViewController ()<UIScrollViewDelegate>
 
@@ -28,16 +25,14 @@
 /** 新闻接口的数组 */
 @property(nonatomic,strong) NSArray *arrayLists;
 @property(nonatomic,assign,getter=isWeatherShow)BOOL weatherShow;
-@property(nonatomic,strong)SXWeatherView *weatherView;
 @property(nonatomic,strong)UIImageView *tran;
+@property(nonatomic, strong)UIView *weatherPage;
 //@property(nonatomic,strong)SXWeatherEntity *weatherModel;
 
 @property(nonatomic,strong)UIButton *rightItem;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *TopToTop;
 
 @property(nonatomic,strong)SXNewsTableViewPage *needScrollToTopPage;
-
-@property(nonatomic,strong)SXWeatherViewModel *weatherViewModel;
 
 @end
 
@@ -50,14 +45,6 @@
         _arrayLists = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"NewsURLs.plist" ofType:nil]];
     }
     return _arrayLists;
-}
-
-- (SXWeatherViewModel *)weatherViewModel
-{
-    if (_weatherViewModel == nil) {
-        _weatherViewModel = [[SXWeatherViewModel alloc]init];
-    }
-    return _weatherViewModel;
 }
 
 #pragma mark - ******************** 页面首次加载
@@ -103,7 +90,7 @@
     [rightItem setImage:[UIImage imageNamed:@"top_navigation_square"] forState:UIControlStateNormal];
     
     self.needScrollToTopPage = self.childViewControllers[0];
-    [self sendWeatherRequest];
+    [self addWeather];
 }
 
 
@@ -260,16 +247,21 @@
         SXTitleLable *labelRight = self.smallScrollView.subviews[rightIndex];
         labelRight.scale = scaleRight;
     }
-    
+}
+
+- (UIView *)weatherPage {
+    if (!_weatherPage) {
+        _weatherPage = [[Lothar shared] Weather_aViewWithCallback:^{
+            [self rightItemClick];
+        }];
+    }
+    return _weatherPage;
 }
 
 - (void)addWeather{
-    SXWeatherView *weatherView = [SXWeatherView view];
-    weatherView.weatherModel = self.weatherViewModel.weatherModel;
-    self.weatherView = weatherView;
-    weatherView.alpha = 0.9;
+    self.weatherPage.alpha = 0.9;
     UIWindow *win = [UIApplication sharedApplication].windows.firstObject;
-    [win addSubview:weatherView];
+    [win addSubview:self.weatherPage];
     
     UIImageView *tran = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"224"]];
     self.tran = tran;
@@ -279,33 +271,17 @@
     tran.x = [UIScreen mainScreen].bounds.size.width - 33;
     [win addSubview:tran];
     
-    weatherView.frame = [UIScreen mainScreen].bounds;
-    weatherView.y = 64;
-    weatherView.height -= 64;
-    self.weatherView.hidden = YES;
+    self.weatherPage.frame = [UIScreen mainScreen].bounds;
+    self.weatherPage.y = 64;
+    self.weatherPage.height -= 64;
+    self.weatherPage.hidden = YES;
     self.tran.hidden = YES;
-    
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pushWeatherDetail) name:@"pushWeatherDetail" object:nil];
 }
 
-- (void)sendWeatherRequest
-{
-    @weakify(self)
-    [[self.weatherViewModel.fetchWeatherInfoCommand execute:nil]subscribeNext:^(id x) {
-        @strongify(self)
-        [self addWeather];
-    } error:^(NSError *error) {
-         NSLog(@"failure %@",error.userInfo);
-    }];
-}
-
-
-- (void)rightItemClick{
+- (void)rightItemClick {
     
     if (self.isWeatherShow) {
-        
-        
-        self.weatherView.hidden = YES;
+        self.weatherPage.hidden = YES;
         self.tran.hidden = YES;
         [UIView animateWithDuration:0.1 animations:^{
             self.rightItem.transform = CGAffineTransformRotate(self.rightItem.transform, M_1_PI * 5);
@@ -316,9 +292,9 @@
     }else{
         
         [self.rightItem setImage:[UIImage imageNamed:@"223"] forState:UIControlStateNormal];
-        self.weatherView.hidden = NO;
+        self.weatherPage.hidden = NO;
         self.tran.hidden = NO;
-        [self.weatherView addAnimate];
+        [[NSNotificationCenter defaultCenter] postNotificationName:SXWeatherPageAddAnimate object:nil];
         [UIView animateWithDuration:0.2 animations:^{
             self.rightItem.transform = CGAffineTransformRotate(self.rightItem.transform, -M_1_PI * 6);
             
@@ -335,21 +311,6 @@
 - (IBAction)leftClick:(id)sender {
     UIViewController *vc = [[Lothar shared] Search_aViewControllerWithKeyword:nil];
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)pushWeatherDetail
-{
-    self.weatherShow = NO;
-    SXWeatherDetailPage *wdvc = [[SXWeatherDetailPage alloc]init];
-    wdvc.weatherModel = self.weatherViewModel.weatherModel;
-    [self.navigationController pushViewController:wdvc animated:YES];
-    [UIView animateWithDuration:0.1 animations:^{
-        self.weatherView.alpha = 0;
-    } completion:^(BOOL finished) {
-        self.weatherView.alpha = 0.9;
-        self.weatherView.hidden = YES;
-        self.tran.hidden = YES;
-    }];
 }
 
 @end

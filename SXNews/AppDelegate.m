@@ -10,6 +10,7 @@
 #import "SXMainTabBarController.h"
 #import "SXMainViewController.h"
 #import <Search-Category/Lothar+Search.h>
+#import <HLNetworking/HLNetworking.h>
 
 @interface AppDelegate ()
 
@@ -23,6 +24,10 @@
     [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"top20"];
     UIApplication *app = [UIApplication sharedApplication];
     app.statusBarStyle = UIStatusBarStyleLightContent;
+    [HLNetworkManager setupConfig:^(HLNetworkConfig * _Nonnull config) {
+        config.request.baseURL = @"http://c.3g.163.com";
+        config.request.apiVersion = nil;
+    }];
     return YES;
 }
 
