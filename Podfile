@@ -25,4 +25,10 @@ pod 'Weather-Category', :path => '../Weather-Category'
 pod 'Weather', :path => '../Weather'
 
 pod 'Detail-Category', :path => '../Detail-Category'
+
+pod 'Reply-Category', :path => '../Reply-Category'
+pod 'Reply', :path => '../Reply'
+
+pod 'PhotoSet-Category', :path => '../PhotoSet-Category'
+pod 'PhotoSet', :path => '../PhotoSet'
 end

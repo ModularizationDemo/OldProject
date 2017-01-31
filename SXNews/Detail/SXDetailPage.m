@@ -10,8 +10,8 @@
 #import "SXNewsDetailViewModel.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "SXDetailPage.h"
-#import "SXReplyPage.h"
 #import <Search-Category/Lothar+Search.h>
+#import <Reply-Category/Lothar+Reply.h>
 
 #define kNewsDetailControllerClose (self.tableView.contentOffset.y - (self.tableView.contentSize.height - SXSCREEN_H + 55) > (100 - 54))
 
@@ -103,7 +103,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (IBAction)backBtn:(id)sender {
@@ -209,7 +209,7 @@
 {
     if (indexPath.section == 1) {
         if (indexPath.row == self.viewModel.replyModels.count) {
-            [self performSegueWithIdentifier:@"toReply" sender:nil];
+            [self replyClick];
         }
     }else if (indexPath.section == 2){
         if (indexPath.row > 0) {
@@ -354,15 +354,12 @@
 }
 
 - (IBAction)replyClick {
-    SXReplyPage *replyVC = [UIStoryboard storyboardWithName:@"SXReplyPage" bundle:nil].instantiateInitialViewController;
-    replyVC.source = SXReplyPageFromNewsDetail;
-    replyVC.newsModel = self.newsModel;
+    UIViewController *replyVC = [[Lothar shared] Reply_aViewController:SXReplyFromNewsDetail photoSetId:@"" docid:self.newsModel.docid boardId:self.newsModel.boardid];
     
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.delegate = nil;
     }
     
-    [[NSNotificationCenter defaultCenter]postNotification:[NSNotification notificationWithName:@"contentStart" object:nil]];
     [self.navigationController pushViewController:replyVC animated:YES];
 }
 

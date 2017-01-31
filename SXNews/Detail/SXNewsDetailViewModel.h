@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "SXNewsDetailEntity.h"
 #import "SXSimilarNewsEntity.h"
-#import "SXReplyEntity.h"
 #import "SXNewsEntity.h"
 
 @interface SXNewsDetailViewModel : NSObject

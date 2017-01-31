@@ -1,15 +1,14 @@
 //
-//  SXReplyEntity.h
+//  SXNewsDetailReplyEntity.h
 //  SXNews
 //
-//  Created by 董 尚先 on 15/2/9.
-//  Copyright (c) 2015年 ShangxianDante. All rights reserved.
+//  Created by wangshiyu13 on 2017/1/31.
+//  Copyright © 2017年 ShangxianDante. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface SXReplyEntity : NSObject
-
+@interface SXNewsDetailReplyEntity : NSObject
 /** 用户的姓名 */
 @property(nonatomic,copy) NSString *name;
 /** 用户的ip信息 */
@@ -35,5 +34,4 @@
 @property(nonatomic,copy)NSString *n;
 /** 顶帖人数*/
 @property(nonatomic,copy)NSString *v;
-
 @end

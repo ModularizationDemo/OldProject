@@ -6,21 +6,25 @@
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "FAB9AAE724E8D8FC219FC6ABC0A91AE813AE4555" : 9223372036854775807,
     "2FD2F6C1F82A663EEC4FC3079F1F83B621B0E505" : 9223372036854775807,
-    "BB2AF5F39BE0BF385775B9FA5FCC5462CF075F63" : 9223372036854775807,
     "7E8AF3F607EC698346A50F1A0D26E15C83181F05" : 9223372036854775807,
+    "BB2AF5F39BE0BF385775B9FA5FCC5462CF075F63" : 9223372036854775807,
     "4F373D8F336AD96F205F46B25702C4C865B55BE0" : 9223372036854775807,
-    "36FEC4AAC42DA4CFB605473512E2F0CB493DA478" : 9223372036854775807,
-    "45A704468F3D7C4E61ADD1E2A05FE684623DC5FF" : 9223372036854775807
+    "C213896AD98683FCBE1A15D2CEC6893078AA4037" : 9223372036854775807,
+    "4513623B5270B2C742F8F056CBED0AADCE3DB1FA" : 9223372036854775807,
+    "45A704468F3D7C4E61ADD1E2A05FE684623DC5FF" : 9223372036854775807,
+    "36FEC4AAC42DA4CFB605473512E2F0CB493DA478" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0DEDC831-DD3D-43C3-9649-281A8A552C9E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "FAB9AAE724E8D8FC219FC6ABC0A91AE813AE4555" : "Search-Category\/",
     "2FD2F6C1F82A663EEC4FC3079F1F83B621B0E505" : "Search\/",
-    "BB2AF5F39BE0BF385775B9FA5FCC5462CF075F63" : "Detail-Category\/",
     "7E8AF3F607EC698346A50F1A0D26E15C83181F05" : "Weather\/",
+    "BB2AF5F39BE0BF385775B9FA5FCC5462CF075F63" : "Detail-Category\/",
     "4F373D8F336AD96F205F46B25702C4C865B55BE0" : "OldProject\/",
-    "36FEC4AAC42DA4CFB605473512E2F0CB493DA478" : "..",
-    "45A704468F3D7C4E61ADD1E2A05FE684623DC5FF" : "Weather-Category\/"
+    "C213896AD98683FCBE1A15D2CEC6893078AA4037" : "PhotoSet-Category\/",
+    "4513623B5270B2C742F8F056CBED0AADCE3DB1FA" : "Reply-Category\/",
+    "45A704468F3D7C4E61ADD1E2A05FE684623DC5FF" : "Weather-Category\/",
+    "36FEC4AAC42DA4CFB605473512E2F0CB493DA478" : ".."
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "SXNews",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -35,6 +39,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Shijie0111\/SJUserInfoManager.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "36FEC4AAC42DA4CFB605473512E2F0CB493DA478"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ModularizationDemo\/Reply-Category.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4513623B5270B2C742F8F056CBED0AADCE3DB1FA"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ModularizationDemo\/Weather-Category.git",
@@ -55,6 +64,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ModularizationDemo\/Detail-Category.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BB2AF5F39BE0BF385775B9FA5FCC5462CF075F63"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ModularizationDemo\/PhotoSet-Category.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C213896AD98683FCBE1A15D2CEC6893078AA4037"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ModularizationDemo\/Search-Category.git",

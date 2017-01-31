@@ -7,6 +7,7 @@
 //
 
 #import "SXNewsDetailBottomCell.h"
+#import "SXNewsDetailReplyEntity.h"
 
 @interface SXNewsDetailBottomCell ()
 
@@ -70,7 +71,7 @@
     self.closeLbl.text = iSCloseing ? @"松手关闭当前页" : @"上拉关闭当前页" ;
 }
 
--(void)setReplyModel:(SXReplyEntity *)replyModel
+-(void)setReplyModel:(SXNewsDetailReplyEntity *)replyModel
 {
     _replyModel = replyModel;
     self.userLbl.text = replyModel.name;

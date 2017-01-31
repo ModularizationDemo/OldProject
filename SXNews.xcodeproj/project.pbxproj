@@ -20,7 +20,6 @@
 		1D25EA521C8D69EE009AFE2E /* SXDetails.css in Resources */ = {isa = PBXBuildFile; fileRef = 1D25EA4E1C8D69EE009AFE2E /* SXDetails.css */; };
 		1D25EA531C8D69EE009AFE2E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D25EA501C8D69EE009AFE2E /* ViewController.m */; };
 		1D25EA691C8E7DE8009AFE2E /* SXNewsDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D25EA681C8E7DE8009AFE2E /* SXNewsDetailViewModel.m */; };
-		1D25EA6C1C8E7E18009AFE2E /* SXPhotoSetViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D25EA6B1C8E7E18009AFE2E /* SXPhotoSetViewModel.m */; };
 		1D25EA721C8E7E4A009AFE2E /* SXNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D25EA711C8E7E4A009AFE2E /* SXNewsViewModel.m */; };
 		1D2A590B1A700822001F9B8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2A590A1A700822001F9B8E /* main.m */; };
 		1D2A590E1A700822001F9B8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2A590D1A700822001F9B8E /* AppDelegate.m */; };
@@ -33,15 +32,6 @@
 		1D58EED81A70C18000411E39 /* NewsURLs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D58EED71A70C18000411E39 /* NewsURLs.plist */; };
 		1D6BE37B1A84B04600BF1AB7 /* SXNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6BE37A1A84B04600BF1AB7 /* SXNavController.m */; };
 		1D7B9F4F1B5E1EC000774BDA /* HYQiHei-50J.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D7B9F4E1B5E1EC000774BDA /* HYQiHei-50J.ttf */; };
-		1D7DFD241CA0F3280084EC5B /* SXReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DFD1C1CA0F3280084EC5B /* SXReplyCell.m */; };
-		1D7DFD251CA0F3280084EC5B /* SXReplyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DFD1E1CA0F3280084EC5B /* SXReplyEntity.m */; };
-		1D7DFD261CA0F3280084EC5B /* SXReplyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DFD201CA0F3280084EC5B /* SXReplyHeader.m */; };
-		1D7DFD271CA0F3280084EC5B /* SXReplyHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D7DFD211CA0F3280084EC5B /* SXReplyHeader.xib */; };
-		1D7DFD281CA0F3280084EC5B /* SXReplyPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DFD231CA0F3280084EC5B /* SXReplyPage.m */; };
-		1D7DFD2E1CA0F3890084EC5B /* SXReplyViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DFD2D1CA0F3890084EC5B /* SXReplyViewModel.m */; };
-		1D882E391A811392004C9C9A /* SXPhotoSetEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D882E381A811392004C9C9A /* SXPhotoSetEntity.m */; };
-		1D882E3C1A81151C004C9C9A /* SXPhotosDetailEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D882E3B1A81151C004C9C9A /* SXPhotosDetailEntity.m */; };
-		1D882E561A811E1D004C9C9A /* SXPhotoSetPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D882E551A811E1D004C9C9A /* SXPhotoSetPage.m */; };
 		1DA8BAB41C522E1F00D041C5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA8BAB31C522E1F00D041C5 /* SystemConfiguration.framework */; };
 		1DA8BAB61C522E2800D041C5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA8BAB51C522E2800D041C5 /* CoreTelephony.framework */; };
 		1DA8BAB81C522E3200D041C5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA8BAB71C522E3200D041C5 /* CoreData.framework */; };
@@ -51,10 +41,9 @@
 		1DE822BA1C5B5C4A00E965C1 /* SXNewsDetailBottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE822B81C5B5C4A00E965C1 /* SXNewsDetailBottomCell.xib */; };
 		1DE822C01C60577900E965C1 /* SXSimilarNewsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE822BF1C60577900E965C1 /* SXSimilarNewsEntity.m */; };
 		C892E60B71DE5A62030B671E /* libPods-SXNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD72890D81DD8F096FF9C643 /* libPods-SXNews.a */; };
+		CF377EC21E4097720019110C /* SXNewsDetailReplyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CF377EC11E4097720019110C /* SXNewsDetailReplyEntity.m */; };
 		CF4DCCE21E3B917100FDE632 /* Target_Detail.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4DCCE11E3B917100FDE632 /* Target_Detail.m */; };
 		CF4DCCE41E3B966500FDE632 /* SXDetailPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4DCCE31E3B966500FDE632 /* SXDetailPage.storyboard */; };
-		CF4DCCE61E3B9C6C00FDE632 /* SXReplyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4DCCE51E3B9C6C00FDE632 /* SXReplyPage.storyboard */; };
-		CF4DCCE81E3B9CC700FDE632 /* SXPhotoSetPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4DCCE71E3B9CC700FDE632 /* SXPhotoSetPage.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,8 +71,6 @@
 		1D25EA501C8D69EE009AFE2E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1D25EA671C8E7DE8009AFE2E /* SXNewsDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXNewsDetailViewModel.h; sourceTree = "<group>"; };
 		1D25EA681C8E7DE8009AFE2E /* SXNewsDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXNewsDetailViewModel.m; sourceTree = "<group>"; };
-		1D25EA6A1C8E7E18009AFE2E /* SXPhotoSetViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXPhotoSetViewModel.h; sourceTree = "<group>"; };
-		1D25EA6B1C8E7E18009AFE2E /* SXPhotoSetViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXPhotoSetViewModel.m; sourceTree = "<group>"; };
 		1D25EA701C8E7E4A009AFE2E /* SXNewsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXNewsViewModel.h; sourceTree = "<group>"; };
 		1D25EA711C8E7E4A009AFE2E /* SXNewsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXNewsViewModel.m; sourceTree = "<group>"; };
 		1D2A59051A700822001F9B8E /* SXNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SXNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,23 +91,6 @@
 		1D6BE3791A84B04600BF1AB7 /* SXNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXNavController.h; sourceTree = "<group>"; };
 		1D6BE37A1A84B04600BF1AB7 /* SXNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXNavController.m; sourceTree = "<group>"; };
 		1D7B9F4E1B5E1EC000774BDA /* HYQiHei-50J.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HYQiHei-50J.ttf"; sourceTree = "<group>"; };
-		1D7DFD1B1CA0F3280084EC5B /* SXReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXReplyCell.h; sourceTree = "<group>"; };
-		1D7DFD1C1CA0F3280084EC5B /* SXReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXReplyCell.m; sourceTree = "<group>"; };
-		1D7DFD1D1CA0F3280084EC5B /* SXReplyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXReplyEntity.h; sourceTree = "<group>"; };
-		1D7DFD1E1CA0F3280084EC5B /* SXReplyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXReplyEntity.m; sourceTree = "<group>"; };
-		1D7DFD1F1CA0F3280084EC5B /* SXReplyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXReplyHeader.h; sourceTree = "<group>"; };
-		1D7DFD201CA0F3280084EC5B /* SXReplyHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXReplyHeader.m; sourceTree = "<group>"; };
-		1D7DFD211CA0F3280084EC5B /* SXReplyHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXReplyHeader.xib; sourceTree = "<group>"; };
-		1D7DFD221CA0F3280084EC5B /* SXReplyPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXReplyPage.h; sourceTree = "<group>"; };
-		1D7DFD231CA0F3280084EC5B /* SXReplyPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXReplyPage.m; sourceTree = "<group>"; };
-		1D7DFD2C1CA0F3890084EC5B /* SXReplyViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXReplyViewModel.h; sourceTree = "<group>"; };
-		1D7DFD2D1CA0F3890084EC5B /* SXReplyViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXReplyViewModel.m; sourceTree = "<group>"; };
-		1D882E371A811392004C9C9A /* SXPhotoSetEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXPhotoSetEntity.h; sourceTree = "<group>"; };
-		1D882E381A811392004C9C9A /* SXPhotoSetEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXPhotoSetEntity.m; sourceTree = "<group>"; };
-		1D882E3A1A81151C004C9C9A /* SXPhotosDetailEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXPhotosDetailEntity.h; sourceTree = "<group>"; };
-		1D882E3B1A81151C004C9C9A /* SXPhotosDetailEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXPhotosDetailEntity.m; sourceTree = "<group>"; };
-		1D882E541A811E1D004C9C9A /* SXPhotoSetPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXPhotoSetPage.h; sourceTree = "<group>"; };
-		1D882E551A811E1D004C9C9A /* SXPhotoSetPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXPhotoSetPage.m; sourceTree = "<group>"; };
 		1DA8BAB31C522E1F00D041C5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1DA8BAB51C522E2800D041C5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		1DA8BAB71C522E3200D041C5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -134,11 +104,11 @@
 		1DE822BF1C60577900E965C1 /* SXSimilarNewsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXSimilarNewsEntity.m; sourceTree = "<group>"; };
 		1EA27A32CAAE4D6B0DA76ECA /* Pods-SXNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SXNews/Pods-SXNews.debug.xcconfig"; sourceTree = "<group>"; };
 		CD66054F3E49551E9CE6E239 /* Pods-SXNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-SXNews/Pods-SXNews.release.xcconfig"; sourceTree = "<group>"; };
+		CF377EC01E4097720019110C /* SXNewsDetailReplyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXNewsDetailReplyEntity.h; sourceTree = "<group>"; };
+		CF377EC11E4097720019110C /* SXNewsDetailReplyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXNewsDetailReplyEntity.m; sourceTree = "<group>"; };
 		CF4DCCE01E3B917100FDE632 /* Target_Detail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Target_Detail.h; sourceTree = "<group>"; };
 		CF4DCCE11E3B917100FDE632 /* Target_Detail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Target_Detail.m; sourceTree = "<group>"; };
 		CF4DCCE31E3B966500FDE632 /* SXDetailPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SXDetailPage.storyboard; sourceTree = "<group>"; };
-		CF4DCCE51E3B9C6C00FDE632 /* SXReplyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SXReplyPage.storyboard; sourceTree = "<group>"; };
-		CF4DCCE71E3B9CC700FDE632 /* SXPhotoSetPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SXPhotoSetPage.storyboard; sourceTree = "<group>"; };
 		DD72890D81DD8F096FF9C643 /* libPods-SXNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SXNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -222,6 +192,8 @@
 				1D0AC82B1A73B8AE00EEF963 /* SXDetailImgEntity.m */,
 				1DE822BE1C60577900E965C1 /* SXSimilarNewsEntity.h */,
 				1DE822BF1C60577900E965C1 /* SXSimilarNewsEntity.m */,
+				CF377EC01E4097720019110C /* SXNewsDetailReplyEntity.h */,
+				CF377EC11E4097720019110C /* SXNewsDetailReplyEntity.m */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -235,36 +207,6 @@
 				1DE822B71C5B5C4A00E965C1 /* SXNewsDetailBottomCell.m */,
 				1DE822B81C5B5C4A00E965C1 /* SXNewsDetailBottomCell.xib */,
 				CF4DCCE31E3B966500FDE632 /* SXDetailPage.storyboard */,
-			);
-			name = Page;
-			sourceTree = "<group>";
-		};
-		1D25EA5B1C8D89F1009AFE2E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				1D25EA6A1C8E7E18009AFE2E /* SXPhotoSetViewModel.h */,
-				1D25EA6B1C8E7E18009AFE2E /* SXPhotoSetViewModel.m */,
-			);
-			name = ViewModel;
-			sourceTree = "<group>";
-		};
-		1D25EA5C1C8D89F3009AFE2E /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				1D882E371A811392004C9C9A /* SXPhotoSetEntity.h */,
-				1D882E381A811392004C9C9A /* SXPhotoSetEntity.m */,
-				1D882E3A1A81151C004C9C9A /* SXPhotosDetailEntity.h */,
-				1D882E3B1A81151C004C9C9A /* SXPhotosDetailEntity.m */,
-			);
-			name = Entity;
-			sourceTree = "<group>";
-		};
-		1D25EA5D1C8D89F6009AFE2E /* Page */ = {
-			isa = PBXGroup;
-			children = (
-				1D882E541A811E1D004C9C9A /* SXPhotoSetPage.h */,
-				1D882E551A811E1D004C9C9A /* SXPhotoSetPage.m */,
-				CF4DCCE71E3B9CC700FDE632 /* SXPhotoSetPage.storyboard */,
 			);
 			name = Page;
 			sourceTree = "<group>";
@@ -326,9 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				1D0AC8241A73B6C000EEF963 /* Detail */,
-				1D882E361A8112ED004C9C9A /* PhotoSet */,
 				1D2A597E1A700864001F9B8E /* News */,
-				1D7DFD1A1CA0F3280084EC5B /* Reply */,
 				1D23576B1A80A4A2000C7AAC /* Main */,
 				1D25EA4B1C8D69EE009AFE2E /* Other */,
 				1D2A590C1A700822001F9B8E /* AppDelegate.h */,
@@ -358,59 +298,6 @@
 				1D25EA611C8D8A09009AFE2E /* ViewModel */,
 			);
 			path = News;
-			sourceTree = "<group>";
-		};
-		1D7DFD1A1CA0F3280084EC5B /* Reply */ = {
-			isa = PBXGroup;
-			children = (
-				1D7DFD2B1CA0F3470084EC5B /* Page */,
-				1D7DFD2A1CA0F33E0084EC5B /* Entity */,
-				1D7DFD291CA0F3310084EC5B /* ViewModel */,
-			);
-			path = Reply;
-			sourceTree = "<group>";
-		};
-		1D7DFD291CA0F3310084EC5B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				1D7DFD2C1CA0F3890084EC5B /* SXReplyViewModel.h */,
-				1D7DFD2D1CA0F3890084EC5B /* SXReplyViewModel.m */,
-			);
-			name = ViewModel;
-			sourceTree = "<group>";
-		};
-		1D7DFD2A1CA0F33E0084EC5B /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				1D7DFD1D1CA0F3280084EC5B /* SXReplyEntity.h */,
-				1D7DFD1E1CA0F3280084EC5B /* SXReplyEntity.m */,
-			);
-			name = Entity;
-			sourceTree = "<group>";
-		};
-		1D7DFD2B1CA0F3470084EC5B /* Page */ = {
-			isa = PBXGroup;
-			children = (
-				1D7DFD1F1CA0F3280084EC5B /* SXReplyHeader.h */,
-				1D7DFD201CA0F3280084EC5B /* SXReplyHeader.m */,
-				1D7DFD211CA0F3280084EC5B /* SXReplyHeader.xib */,
-				1D7DFD221CA0F3280084EC5B /* SXReplyPage.h */,
-				1D7DFD231CA0F3280084EC5B /* SXReplyPage.m */,
-				1D7DFD1B1CA0F3280084EC5B /* SXReplyCell.h */,
-				1D7DFD1C1CA0F3280084EC5B /* SXReplyCell.m */,
-				CF4DCCE51E3B9C6C00FDE632 /* SXReplyPage.storyboard */,
-			);
-			name = Page;
-			sourceTree = "<group>";
-		};
-		1D882E361A8112ED004C9C9A /* PhotoSet */ = {
-			isa = PBXGroup;
-			children = (
-				1D25EA5D1C8D89F6009AFE2E /* Page */,
-				1D25EA5C1C8D89F3009AFE2E /* Entity */,
-				1D25EA5B1C8D89F1009AFE2E /* ViewModel */,
-			);
-			path = PhotoSet;
 			sourceTree = "<group>";
 		};
 		65EF3BE039697246E05F2919 /* Pods */ = {
@@ -506,14 +393,11 @@
 				1D2A59161A700822001F9B8E /* Images.xcassets in Resources */,
 				1D58EED81A70C18000411E39 /* NewsURLs.plist in Resources */,
 				1D7B9F4F1B5E1EC000774BDA /* HYQiHei-50J.ttf in Resources */,
-				CF4DCCE61E3B9C6C00FDE632 /* SXReplyPage.storyboard in Resources */,
 				1DE822BA1C5B5C4A00E965C1 /* SXNewsDetailBottomCell.xib in Resources */,
 				CF4DCCE41E3B966500FDE632 /* SXDetailPage.storyboard in Resources */,
 				1D2357761A80A4B2000C7AAC /* Main.storyboard in Resources */,
-				CF4DCCE81E3B9CC700FDE632 /* SXPhotoSetPage.storyboard in Resources */,
 				1D25EA521C8D69EE009AFE2E /* SXDetails.css in Resources */,
 				1D58EECA1A709AE600411E39 /* News.storyboard in Resources */,
-				1D7DFD271CA0F3280084EC5B /* SXReplyHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,28 +458,20 @@
 			files = (
 				1D25EA531C8D69EE009AFE2E /* ViewController.m in Sources */,
 				1D25EA511C8D69EE009AFE2E /* MJExtensionConfig.m in Sources */,
-				1D7DFD281CA0F3280084EC5B /* SXReplyPage.m in Sources */,
 				1DE822C01C60577900E965C1 /* SXSimilarNewsEntity.m in Sources */,
 				1D6BE37B1A84B04600BF1AB7 /* SXNavController.m in Sources */,
-				1D882E3C1A81151C004C9C9A /* SXPhotosDetailEntity.m in Sources */,
 				1D58EED01A70A42100411E39 /* SXNewsTableViewPage.m in Sources */,
 				1D0AC8291A73B6EF00EEF963 /* SXNewsDetailEntity.m in Sources */,
-				1D7DFD261CA0F3280084EC5B /* SXReplyHeader.m in Sources */,
-				1D7DFD2E1CA0F3890084EC5B /* SXReplyViewModel.m in Sources */,
-				1D7DFD251CA0F3280084EC5B /* SXReplyEntity.m in Sources */,
 				1D0AC8321A73C66200EEF963 /* SXDetailPage.m in Sources */,
 				1D58EEC81A70924A00411E39 /* SXNewsEntity.m in Sources */,
-				1D882E391A811392004C9C9A /* SXPhotoSetEntity.m in Sources */,
 				1D25EA691C8E7DE8009AFE2E /* SXNewsDetailViewModel.m in Sources */,
 				1D20211F1B5A572700F38C4C /* SXMainTabBarController.m in Sources */,
-				1D25EA6C1C8E7E18009AFE2E /* SXPhotoSetViewModel.m in Sources */,
 				1D2021201B5A572700F38C4C /* SXTabBar.m in Sources */,
 				1D2357721A80A4A2000C7AAC /* SXMainViewController.m in Sources */,
 				CF4DCCE21E3B917100FDE632 /* Target_Detail.m in Sources */,
-				1D882E561A811E1D004C9C9A /* SXPhotoSetPage.m in Sources */,
-				1D7DFD241CA0F3280084EC5B /* SXReplyCell.m in Sources */,
 				1D25EA721C8E7E4A009AFE2E /* SXNewsViewModel.m in Sources */,
 				1D0AC82C1A73B8AE00EEF963 /* SXDetailImgEntity.m in Sources */,
+				CF377EC21E4097720019110C /* SXNewsDetailReplyEntity.m in Sources */,
 				1D20211E1B5A572700F38C4C /* SXBarButton.m in Sources */,
 				1D2357741A80A4A2000C7AAC /* SXTitleLable.m in Sources */,
 				1D2A590E1A700822001F9B8E /* AppDelegate.m in Sources */,

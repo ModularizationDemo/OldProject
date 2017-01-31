@@ -8,14 +8,14 @@
 
 #import "SXNewsTableViewPage.h"
 #import "SXDetailPage.h"
-#import "SXPhotoSetPage.h"
 #import "SXNewsCell.h"
 #import "SXNewsViewModel.h"
 #import <Detail-Category/Lothar+Detail.h>
+#import <PhotoSet-Category/Lothar+PhotoSet.h>
 
 @interface SXNewsTableViewPage ()
 
-@property(nonatomic,strong) NSMutableArray *arrayList;
+@property(nonatomic,strong) NSMutableArray <SXNewsEntity *>*arrayList;
 @property(nonatomic,assign)BOOL update;
 @property(nonatomic,strong)SXNewsViewModel *viewModel;
 
@@ -74,7 +74,6 @@
         [self.tableView.mj_header beginRefreshing];
         self.update = NO;
     }
-    [[NSNotificationCenter defaultCenter]postNotification:[NSNotification notificationWithName:@"contentStart" object:nil]];
 }
 
 
@@ -147,8 +146,8 @@
 {
     // 刚选中又马上取消选中，格子不变色
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    if ([cell.reuseIdentifier isEqual: @"NewsCell"] || [cell.reuseIdentifier isEqual: @"TopTxtCell"]) {
+    SXNewsCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if ([cell.reuseIdentifier isEqual: @"NewsCell"] || [cell.reuseIdentifier isEqual: @"TopTxtCell"] || [cell.reuseIdentifier isEqual: @"ImagesCell"]) {
         SXDetailPage *dc = [UIStoryboard storyboardWithName:@"SXDetailPage" bundle:nil].instantiateInitialViewController;
         dc.newsModel = self.arrayList[indexPath.row];
         dc.index = self.index;
@@ -157,8 +156,10 @@
         }
         [self.navigationController pushViewController:dc animated:YES];
     } else {
-        SXPhotoSetPage *pc = [UIStoryboard storyboardWithName:@"SXPhotoSetPage" bundle:nil].instantiateInitialViewController;
-        pc.newsModel = self.arrayList[indexPath.row];
+        UIViewController *pc = [[Lothar shared] PhotoSet_aViewController:self.arrayList[indexPath.row].photosetID
+                                       replyCount:self.arrayList[indexPath.row].replyCount
+                                          boardid:self.arrayList[indexPath.row].boardid
+                                            docid:self.arrayList[indexPath.row].docid];
         [self.navigationController pushViewController:pc animated:YES];
     }
 }
