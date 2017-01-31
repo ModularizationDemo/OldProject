@@ -7,6 +7,7 @@
 //
 
 #import "SXReplyViewModel.h"
+#import <HLNetworking/HLNetworking.h>
 
 @interface SXReplyViewModel ()
 
@@ -49,7 +50,7 @@
                     [subscriber sendNext:temReplyModels];
                     [subscriber sendCompleted];
                 }
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSError *error) {
                 [subscriber sendError:error];
             }];
             return nil;
@@ -78,7 +79,7 @@
                 self.replyNormalModels = temArray;
                 [subscriber sendNext:temArray];
                 [subscriber sendCompleted];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSError *error) {
                 [subscriber sendError:error];
             }];
             return nil;
@@ -88,36 +89,46 @@
 
 #pragma mark - **************** 下面相当于service的代码
 - (void)requestForFeedbackSuccess:(void (^)(NSDictionary *result))success
-                          failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+                          failure:(void (^)(NSError *error))failure{
     NSString *url;
     if(self.source == SXReplyPageFromNewsDetail){
         url = [NSString stringWithFormat:@"http://comment.api.163.com/api/json/post/list/new/hot/%@/%@/0/10/10/2/2",self.newsModel.boardid,self.newsModel.docid];
     }else{
         url = [NSString stringWithFormat:@"http://comment.api.163.com/api/json/post/list/new/hot/%@/%@/0/10/10/2/2",self.newsModel.boardid,self.photoSetPostID];
     }
-    [[SXHTTPManager manager]GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-        if (responseObject) {
-            success(responseObject);
+    [[HLAPIRequest request]
+     .setMethod(GET)
+     .setCustomURL(url)
+     .success(^(id response){
+        if (response) {
+            success(response);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure(operation,error);
-    }];
+    })
+     .failure(^(NSError *error){
+        failure(error);
+    })
+     start];
 }
 
 - (void)requestForPhotoNorFeedbackSuccess:(void (^)(NSDictionary *result))success
-                                failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+                                failure:(void (^)(NSError *error))failure{
     NSString *url;
     if(self.source == SXReplyPageFromNewsDetail){
         url = [NSString stringWithFormat:@"http://comment.api.163.com/api/json/post/list/new/normal/%@/%@/desc/0/10/10/2/2",self.newsModel.boardid,self.newsModel.docid];
     }else{
         url = [NSString stringWithFormat:@"http://comment.api.163.com/api/json/post/list/new/normal/%@/%@/desc/0/10/10/2/2",self.newsModel.boardid,self.photoSetPostID];
     }
-    [[SXHTTPManager manager]GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-        if (responseObject) {
-            success(responseObject);
+    [[HLAPIRequest request]
+     .setMethod(GET)
+     .setCustomURL(url)
+     .success(^(id response){
+        if (response) {
+            success(response);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure(operation,error);
-    }];
+    })
+     .failure(^(NSError *error){
+        failure(error);
+    })
+     start];
 }
 @end

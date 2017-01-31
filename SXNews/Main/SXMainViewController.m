@@ -13,6 +13,7 @@
 #import "SXTitleLable.h"
 #import "SXWeatherEntity.h"
 #import "SXWeatherViewModel.h"
+#import <Search-Category/Lothar+Search.h>
 
 @interface SXMainViewController ()<UIScrollViewDelegate>
 
@@ -296,15 +297,6 @@
     } error:^(NSError *error) {
          NSLog(@"failure %@",error.userInfo);
     }];
-//    NSString *url = @"http://c.3g.163.com/nc/weather/5YyX5LqsfOWMl%2BS6rA%3D%3D.html";
-//    [[SXHTTPManager manager]GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-//        
-//       SXWeatherEntity *weatherModel = [SXWeatherEntity objectWithKeyValues:responseObject];
-//        self.weatherModel = weatherModel;
-//        [self addWeather];
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"failure %@",error);
-//    }];
 }
 
 
@@ -338,6 +330,11 @@
         }];
     }
     self.weatherShow = !self.isWeatherShow;
+}
+
+- (IBAction)leftClick:(id)sender {
+    UIViewController *vc = [[Lothar shared] Search_aViewControllerWithKeyword:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)pushWeatherDetail

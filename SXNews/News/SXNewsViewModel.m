@@ -8,6 +8,7 @@
 
 #import "SXNewsViewModel.h"
 #import "SXNewsEntity.h"
+#import <HLNetworking/HLNetworking.h>
 
 @implementation SXNewsViewModel
 - (instancetype)init
@@ -28,7 +29,7 @@
                 NSArray *arrayM = [SXNewsEntity objectArrayWithKeyValuesArray:array];
                 [subscriber sendNext:arrayM];
                 [subscriber sendCompleted];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSError *error) {
                 [subscriber sendError:error];
             }];
             return nil;
@@ -36,14 +37,19 @@
     }];
 }
 
-- (void)requestForNewsEntityWithUrl:(NSString *)url success:(void (^)(NSArray *array))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+- (void)requestForNewsEntityWithUrl:(NSString *)url success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure{
     NSString *fullUrl = [@"http://c.m.163.com/" stringByAppendingString:url];
-    [[SXHTTPManager manager]GET:fullUrl parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-        NSString *key = [responseObject.keyEnumerator nextObject];
-        NSArray *temArray = responseObject[key];
-        success(temArray);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure(operation,error);
-    }];
+    [[HLAPIRequest request]
+     .setMethod(GET)
+     .setCustomURL(fullUrl)
+     .success(^(NSDictionary *response){
+        NSString *key = [response.keyEnumerator nextObject];
+        NSArray *tempArray = response[key];
+        success(tempArray);
+    })
+     .failure(^(NSError *error){
+        failure(error);
+    })
+     start];
 }
 @end

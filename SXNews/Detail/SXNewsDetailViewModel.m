@@ -9,6 +9,7 @@
 #import "SXNewsDetailViewModel.h"
 #import "SXDetailImgEntity.h"
 #import "SXReplyViewModel.h"
+#import <HLNetworking/HLNetworking.h>
 
 @interface SXNewsDetailViewModel ()
 /**
@@ -63,7 +64,7 @@
                 }
                 [subscriber sendNext:self.replyCountBtnTitle];
                 [subscriber sendCompleted];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSError *error) {
                 [subscriber sendError:error];
             }];
             return nil;
@@ -89,15 +90,18 @@
 
 #pragma mark - **************** 下面相当于service的代码
 - (void)requestForNewsDetailSuccess:(void (^)(NSDictionary *result))success
-                         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+                         failure:(void (^)(NSError *error))failure{
     NSString *url = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/%@/full.html",self.newsModel.docid];
-    [[SXHTTPManager manager]GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if (responseObject) {
-            success(responseObject);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure(operation,error);
-    }];
+    [[HLAPIRequest request]
+     .setMethod(GET)
+     .setCustomURL(url)
+     .success(^(id response){
+        success(response);
+    })
+     .failure(^(NSError *error){
+        failure(error);
+    })
+     start];
 }
 
 #pragma mark - **************** 业务逻辑

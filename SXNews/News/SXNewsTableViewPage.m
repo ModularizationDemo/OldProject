@@ -10,8 +10,8 @@
 #import "SXDetailPage.h"
 #import "SXPhotoSetPage.h"
 #import "SXNewsCell.h"
-#import "SXNetworkTools.h"
 #import "SXNewsViewModel.h"
+#import <Detail-Category/Lothar+Detail.h>
 
 @interface SXNewsTableViewPage ()
 
@@ -147,27 +147,20 @@
 {
     // 刚选中又马上取消选中，格子不变色
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    UIViewController *vc = [[UIViewController alloc]init];
-    vc.view.backgroundColor = [UIColor yellowColor];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.destinationViewController isKindOfClass:[SXDetailPage class]]) {
-        
-        NSInteger x = self.tableView.indexPathForSelectedRow.row;
-        SXDetailPage *dc = segue.destinationViewController;
-        dc.newsModel = self.arrayList[x];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if ([cell.reuseIdentifier isEqual: @"NewsCell"] || [cell.reuseIdentifier isEqual: @"TopTxtCell"]) {
+        SXDetailPage *dc = [UIStoryboard storyboardWithName:@"SXDetailPage" bundle:nil].instantiateInitialViewController;
+        dc.newsModel = self.arrayList[indexPath.row];
         dc.index = self.index;
         if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
             self.navigationController.interactivePopGestureRecognizer.delegate = nil;
         }
-    }else{
-        NSInteger x = self.tableView.indexPathForSelectedRow.row;
-        SXPhotoSetPage *pc = segue.destinationViewController;
-        pc.newsModel = self.arrayList[x];
+        [self.navigationController pushViewController:dc animated:YES];
+    } else {
+        SXPhotoSetPage *pc = [UIStoryboard storyboardWithName:@"SXPhotoSetPage" bundle:nil].instantiateInitialViewController;
+        pc.newsModel = self.arrayList[indexPath.row];
+        [self.navigationController pushViewController:pc animated:YES];
     }
-    
 }
 
 @end

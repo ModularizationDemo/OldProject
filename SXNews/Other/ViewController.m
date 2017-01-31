@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "SXNetworkTools.h"
 #import "SXNewsEntity.h"
+#import <HLNetworking/HLNetworking.h>
 
 @interface ViewController ()
 
@@ -30,12 +30,14 @@
     // http://c.m.163.com/nc/article/headline/T1348647853363/0-30.html
     
     // netconnect
-    [[[SXNetworkTools sharedNetworkTools]GET:@"nc/article/headline/T1348647853363/0-20.html" parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary* responseObject) {
-        
+    [[HLAPIRequest request]
+     .setMethod(GET)
+     .setPath(@"nc/article/headline/T1348647853363/0-20.html")
+     .success(^(NSDictionary *response){
         // 取出第一个数组，扩展性好的
-        NSString *key = [responseObject.keyEnumerator nextObject];
+        NSString *key = [response.keyEnumerator nextObject];
         
-        NSArray *temArray = responseObject[key];
+        NSArray *temArray = response[key];
         
         // 取出小的一组 遍历打印出声明
         [self writeInfoWithDict:temArray[1]];
@@ -48,11 +50,8 @@
             [arrayM addObject:news];
         }];
         self.arrayList = arrayM;
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
-    }] resume];
-    
+    })
+     start];
 }
 
 #pragma mark - ******************** 通过此方法打印出成员变量

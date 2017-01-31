@@ -7,6 +7,7 @@
 //
 
 #import "SXPhotoSetViewModel.h"
+#import <HLNetworking/HLNetworking.h>
 
 @implementation SXPhotoSetViewModel
 - (instancetype)init
@@ -28,7 +29,7 @@
                 self.photoSet = photoSet;
                 [subscriber sendNext:photoSet];
                 [subscriber sendCompleted];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSError *error) {
                 [subscriber sendError:error];
             }];
             return nil;
@@ -38,7 +39,7 @@
 
 #pragma mark - **************** 下面相当于service的代码
 - (void)requestForPhotoSetSuccess:(void (^)(NSDictionary *result))success
-                          failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+                          failure:(void (^)(NSError *error))failure{
     // 取出关键字
     NSArray *parameters = [[self.newsModel.photosetID substringFromIndex:4] componentsSeparatedByString:@"|"];
     
@@ -51,13 +52,18 @@
         self.replyCountBtnTitle = [NSString stringWithFormat:@"%.0f跟帖",count];
     }
 
-    [[SXHTTPManager manager]GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-        if (responseObject) {
-            success(responseObject);
+    [[HLAPIRequest request]
+     .setMethod(GET)
+     .setCustomURL(url)
+     .success(^(id response){
+        if (response) {
+            success(response);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure(operation,error);
-    }];
+    })
+     .failure(^(NSError *error){
+        failure(error);
+    })
+     start];
 }
 
 @end

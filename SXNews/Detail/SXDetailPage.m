@@ -10,8 +10,8 @@
 #import "SXNewsDetailViewModel.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "SXDetailPage.h"
-#import "SXSearchPage.h"
 #import "SXReplyPage.h"
+#import <Search-Category/Lothar+Search.h>
 
 #define kNewsDetailControllerClose (self.tableView.contentOffset.y - (self.tableView.contentSize.height - SXSCREEN_H + 55) > (100 - 54))
 
@@ -104,19 +104,6 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    SXReplyPage *replyvc = segue.destinationViewController;
-    replyvc.source = SXReplyPageFromNewsDetail;
-    replyvc.newsModel = self.newsModel;
-    
-    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
-    }
-    
-    [[NSNotificationCenter defaultCenter]postNotification:[NSNotification notificationWithName:@"contentStart" object:nil]];
 }
 
 - (IBAction)backBtn:(id)sender {
@@ -232,8 +219,8 @@
             SXNewsEntity *model = [[SXNewsEntity alloc]init];
             model.docid = [self.viewModel.sameNews[indexPath.row] id];
             
-            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"News" bundle:nil];
-            SXDetailPage *devc = (SXDetailPage *)[sb instantiateViewControllerWithIdentifier:@"SXDetailPage"];
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SXDetailPage" bundle:nil];
+            SXDetailPage *devc = sb.instantiateInitialViewController;
             devc.newsModel = model;
             [self.navigationController pushViewController:devc animated:YES];
         }
@@ -365,10 +352,21 @@
 
 - (void)keywordButtonClick:(UIButton *)sender
 {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    SXSearchPage *sp = [sb instantiateViewControllerWithIdentifier:@"SXSearchPage"];
-    sp.keyword = sender.titleLabel.text;
-    [self.navigationController pushViewController:sp animated:YES];
+    UIViewController *viewController = [[Lothar shared] Search_aViewControllerWithKeyword:sender.titleLabel.text];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (IBAction)replyClick {
+    SXReplyPage *replyVC = [UIStoryboard storyboardWithName:@"SXReplyPage" bundle:nil].instantiateInitialViewController;
+    replyVC.source = SXReplyPageFromNewsDetail;
+    replyVC.newsModel = self.newsModel;
+    
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    }
+    
+    [[NSNotificationCenter defaultCenter]postNotification:[NSNotification notificationWithName:@"contentStart" object:nil]];
+    [self.navigationController pushViewController:replyVC animated:YES];
 }
 
 // 截图用于做上划返回

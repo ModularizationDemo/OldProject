@@ -1,26 +1,27 @@
 PODS:
-  - AFNetworking (2.5.4):
-    - AFNetworking/NSURLConnection (= 2.5.4)
-    - AFNetworking/NSURLSession (= 2.5.4)
-    - AFNetworking/Reachability (= 2.5.4)
-    - AFNetworking/Security (= 2.5.4)
-    - AFNetworking/Serialization (= 2.5.4)
-    - AFNetworking/UIKit (= 2.5.4)
-  - AFNetworking/NSURLConnection (2.5.4):
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.4):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.4)
-  - AFNetworking/Security (2.5.4)
-  - AFNetworking/Serialization (2.5.4)
-  - AFNetworking/UIKit (2.5.4):
-    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Detail-Category (1):
+    - Lothar
   - FDFullscreenPopGesture (1.1)
+  - HLNetworking (2.0.0):
+    - HLNetworking/Core (= 2.0.0)
+  - HLNetworking/Core (2.0.0):
+    - AFNetworking (~> 3.1.0)
+  - Lothar (1.0.5)
   - MJExtension (2.0.4)
   - MJRefresh (3.1.9)
   - ReactiveCocoa (2.5):
@@ -33,26 +34,49 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
+  - Search (1):
+    - Detail-Category
+  - Search-Category (1):
+    - Lothar
+  - Tools (1):
+    - HLNetworking
   - UITableView+FDTemplateLayoutCell (1.4)
 
 DEPENDENCIES:
-  - AFNetworking (= 2.5.4)
+  - Detail-Category (from `../Detail-Category`)
   - FDFullscreenPopGesture (= 1.1)
   - MJExtension (= 2.0.4)
   - MJRefresh (= 3.1.9)
   - ReactiveCocoa (= 2.5)
   - SDWebImage (= 3.7.5)
+  - Search (from `../Search`)
+  - Search-Category (from `../Search-Category`)
+  - Tools (= 1)
   - UITableView+FDTemplateLayoutCell
 
+EXTERNAL SOURCES:
+  Detail-Category:
+    :path: "../Detail-Category"
+  Search:
+    :path: "../Search"
+  Search-Category:
+    :path: "../Search-Category"
+
 SPEC CHECKSUMS:
-  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Detail-Category: b95324939b5b29cc5272e3360427d8094e46224a
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  HLNetworking: bc14bb343d5d1a55a7f99b3022b5010ae49e918b
+  Lothar: 5e63b4b128abb25d794dd055cb20aba777a76e65
   MJExtension: 90503779f5c2608b76b5b0f41efdb05c080d1976
   MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  Search: 7c171fbceac5d3b7e6b2873eb2b3bcfc94197ddc
+  Search-Category: e0e63199391364928917eba4b90aada8b11de93e
+  Tools: 907b99d6a60cd8317ff7076cbb20ea6f888866a3
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
-PODFILE CHECKSUM: 71521ffd7d6e0b5f50dd9a1af8c1806842c994e2
+PODFILE CHECKSUM: 62fff043679410971f426b5cf3121498fde80bd1
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0.beta.3

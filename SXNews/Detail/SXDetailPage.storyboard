@@ -1,7 +1,116 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DtD-2T-Crm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--新闻详情-->
+        <scene sceneID="T87-FG-Ewl">
+            <objects>
+                <viewController storyboardIdentifier="SXDetailPage" hidesBottomBarWhenPushed="YES" id="DtD-2T-Crm" customClass="SXDetailPage" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="isu-7b-d6w"/>
+                        <viewControllerLayoutGuide type="bottom" id="9e7-d4-CqV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RIs-Z4-G5y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uOJ-1e-H24">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbK-Zk-EOW">
+                                        <rect key="frame" x="0.0" y="12" width="42" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="G51-bC-Gub"/>
+                                            <constraint firstAttribute="height" constant="35" id="OOh-PD-cTL"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="night_icon_back">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtn:" destination="DtD-2T-Crm" eventType="touchUpInside" id="7pM-xH-2TR"/>
+                                        </connections>
+                                    </button>
+                                    <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zqu-7i-j1u">
+                                        <rect key="frame" x="0.0" y="54" width="375" height="1"/>
+                                        <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="FC7-L5-RMj"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3T-01-kB3">
+                                        <rect key="frame" x="295" y="19" width="80" height="35"/>
+                                        <rect key="contentStretch" x="0.5" y="0.5" width="0.0" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="I8T-FJ-BMi"/>
+                                            <constraint firstAttribute="height" constant="35" id="UrX-sc-nnY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                        <state key="normal" title="0 跟帖" backgroundImage="contentview_commentbacky">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="replyClick" destination="DtD-2T-Crm" eventType="touchUpInside" id="31A-4c-KXh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bbK-Zk-EOW" firstAttribute="top" secondItem="uOJ-1e-H24" secondAttribute="top" constant="12" id="AoI-uI-8q9"/>
+                                    <constraint firstAttribute="height" constant="55" id="B1F-Zg-iLZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zqu-7i-j1u" secondAttribute="trailing" id="PEp-La-fbj"/>
+                                    <constraint firstItem="bbK-Zk-EOW" firstAttribute="leading" secondItem="uOJ-1e-H24" secondAttribute="leading" id="RVL-5P-DqB"/>
+                                    <constraint firstItem="Zqu-7i-j1u" firstAttribute="leading" secondItem="uOJ-1e-H24" secondAttribute="leading" id="Yl7-IZ-d8h"/>
+                                    <constraint firstItem="W3T-01-kB3" firstAttribute="top" secondItem="uOJ-1e-H24" secondAttribute="top" constant="19" id="g7X-wd-k3L"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zqu-7i-j1u" secondAttribute="bottom" id="gnE-7m-lv6"/>
+                                    <constraint firstAttribute="trailing" secondItem="W3T-01-kB3" secondAttribute="trailing" id="jke-QT-eZG"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="enk-NT-IlW">
+                                <rect key="frame" x="0.0" y="55" width="375" height="666"/>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="DtD-2T-Crm" id="4uI-ir-f9y"/>
+                                    <outlet property="delegate" destination="DtD-2T-Crm" id="UMS-2h-Syq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uOJ-1e-H24" firstAttribute="leading" secondItem="RIs-Z4-G5y" secondAttribute="leading" id="EIu-HI-hdk"/>
+                            <constraint firstItem="enk-NT-IlW" firstAttribute="leading" secondItem="RIs-Z4-G5y" secondAttribute="leading" id="I3D-bM-s3Z"/>
+                            <constraint firstAttribute="trailing" secondItem="uOJ-1e-H24" secondAttribute="trailing" id="SE2-IZ-25L"/>
+                            <constraint firstAttribute="trailing" secondItem="enk-NT-IlW" secondAttribute="trailing" id="Ts2-Hq-M3U"/>
+                            <constraint firstItem="9e7-d4-CqV" firstAttribute="top" secondItem="enk-NT-IlW" secondAttribute="bottom" constant="-54" id="YHS-8n-Dzl"/>
+                            <constraint firstItem="uOJ-1e-H24" firstAttribute="top" secondItem="RIs-Z4-G5y" secondAttribute="top" id="ljq-Ou-Ahx"/>
+                            <constraint firstItem="enk-NT-IlW" firstAttribute="top" secondItem="RIs-Z4-G5y" secondAttribute="top" constant="55" id="sOq-uz-Rje"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="新闻详情" id="N36-Bs-ynG">
+                        <barButtonItem key="rightBarButtonItem" image="002" id="Bq9-H2-S10"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backBtn" destination="bbK-Zk-EOW" id="Kou-ri-joZ"/>
+                        <outlet property="replyCountBtn" destination="W3T-01-kB3" id="r4Z-sg-jDw"/>
+                        <outlet property="tableView" destination="enk-NT-IlW" id="vS7-O8-xC9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0XF-5n-xHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-346" y="173"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="002" width="14" height="13"/>
+        <image name="contentview_commentbacky" width="29" height="44"/>
+        <image name="night_icon_back" width="54" height="44"/>
+    </resources>
 </document>

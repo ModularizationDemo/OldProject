@@ -79,13 +79,14 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    SXReplyPage *replyvc = segue.destinationViewController;
-    replyvc.source = SXReplyPageFromPhotoset;
-    replyvc.newsModel = self.newsModel;
-    replyvc.photoSetId = self.photoSet.postid;
+- (IBAction)replyClick {
+    SXReplyPage *replyVC = [UIStoryboard storyboardWithName:@"SXReplyPage" bundle:nil].instantiateInitialViewController;
+    replyVC.source = SXReplyPageFromPhotoset;
+    replyVC.newsModel = self.newsModel;
+    replyVC.photoSetId = self.photoSet.postid;
+    [self.navigationController pushViewController:replyVC animated:YES];
 }
+
 
 - (IBAction)backBtnClick:(id)sender {
     CFRelease((__bridge CFTypeRef)self);
@@ -237,11 +238,9 @@ static void RGBtoHSV( float r, float g, float b, float *h, float *s,float *v)
                                                  bitmapInfo);
     CGRect drawRect = CGRectMake(0, 0, thumbSize.width, thumbSize.height);
     CGContextDrawImage(context, drawRect, image.CGImage);
-    CGColorSpaceRelease(colorSpace);
-    
+
     //取每个点的像素值
-    unsigned char* data = CGBitmapContextGetData (context);
-    CGContextRelease(context);
+    unsigned char* data = CGBitmapContextGetData(context);
     if (data == NULL) return nil;
     NSArray *MaxColor=nil;
     // NSCountedSet *cls=[NSCountedSet setWithCapacity:thumbSize.width*thumbSize.height];
@@ -271,6 +270,8 @@ static void RGBtoHSV( float r, float g, float b, float *h, float *s,float *v)
         MaxColor=@[@(red),@(green),@(blue),@(alpha)];
         //[cls addObject:clr];
     }
+    CGColorSpaceRelease(colorSpace);
+    CGContextRelease(context);
     return [UIColor colorWithRed:([MaxColor[0] intValue]/255.0f) green:([MaxColor[1] intValue]/255.0f) blue:([MaxColor[2] intValue]/255.0f) alpha:(0.2)];
 }
 

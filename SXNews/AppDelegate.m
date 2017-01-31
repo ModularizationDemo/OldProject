@@ -7,9 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "SXSearchPage.h"
 #import "SXMainTabBarController.h"
 #import "SXMainViewController.h"
+#import <Search-Category/Lothar+Search.h>
 
 @interface AppDelegate ()
 
@@ -36,9 +36,8 @@
     }else if ([shortcutItem.localizedTitle isEqualToString:@"搜索"]){
         SXMainTabBarController *rootTab = (SXMainTabBarController *)self.window.rootViewController;
         UINavigationController *rootNav = rootTab.viewControllers[0];
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        SXSearchPage *sp = [sb instantiateViewControllerWithIdentifier:@"SXSearchPage"];
-        [rootNav pushViewController:sp animated:YES];
+        UIViewController *viewController = [[Lothar shared] Search_aViewControllerWithKeyword:nil];
+        [rootNav pushViewController:viewController animated:YES];
     }
 }
 

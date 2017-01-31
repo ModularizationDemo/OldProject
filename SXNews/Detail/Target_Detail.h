@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface Target_Detail : NSObject
-
+- (UIViewController *)Action_aViewController:(NSDictionary *)params;
 @end
