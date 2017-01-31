@@ -107,9 +107,6 @@
 }
 
 - (IBAction)backBtn:(id)sender {
-    CFRelease((__bridge CFTypeRef)self);
-    CFIndex rc = CFGetRetainCount((__bridge CFTypeRef)self);
-    NSLog(@"%ld",rc);
     [self.navigationController popViewControllerAnimated:YES];
 }
 

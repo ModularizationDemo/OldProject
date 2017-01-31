@@ -89,9 +89,6 @@
 
 
 - (IBAction)backBtnClick:(id)sender {
-    CFRelease((__bridge CFTypeRef)self);
-    CFIndex rc = CFGetRetainCount((__bridge CFTypeRef)self);
-    NSLog(@"%ld",rc);
     [self.navigationController popViewControllerAnimated:YES];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
@@ -191,7 +188,9 @@
         
         [photoImgView sd_setImageWithURL:purl placeholderImage:[UIImage imageNamed:@"photoview_image_default_white"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             UIColor *color = [self mostColor:photoImgView.image];
-            self.photoScrollView.backgroundColor = color;
+            if (color) {
+                self.photoScrollView.backgroundColor = color;
+            }
         }];
     }
 }
@@ -241,7 +240,11 @@ static void RGBtoHSV( float r, float g, float b, float *h, float *s,float *v)
 
     //取每个点的像素值
     unsigned char* data = CGBitmapContextGetData(context);
-    if (data == NULL) return nil;
+    if (data == NULL) {
+        CGColorSpaceRelease(colorSpace);
+        CGContextRelease(context);
+        return nil;
+    }
     NSArray *MaxColor=nil;
     // NSCountedSet *cls=[NSCountedSet setWithCapacity:thumbSize.width*thumbSize.height];
     float maxScore=0;
