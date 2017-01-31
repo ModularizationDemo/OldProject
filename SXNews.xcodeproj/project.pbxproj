@@ -154,7 +154,6 @@
 		1DA8BAB91C522E5600D041C5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1DA8BABB1C522E5F00D041C5 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		1DA8BABD1C522EEE00D041C5 /* NetEasyPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetEasyPrefix.pch; sourceTree = "<group>"; };
-		1DA8BAC01C55C4C100D041C5 /* OneAPM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OneAPM.framework; sourceTree = "<group>"; };
 		1DE822B61C5B5C4A00E965C1 /* SXNewsDetailBottomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXNewsDetailBottomCell.h; sourceTree = "<group>"; };
 		1DE822B71C5B5C4A00E965C1 /* SXNewsDetailBottomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXNewsDetailBottomCell.m; sourceTree = "<group>"; };
 		1DE822B81C5B5C4A00E965C1 /* SXNewsDetailBottomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXNewsDetailBottomCell.xib; sourceTree = "<group>"; };
@@ -380,7 +379,6 @@
 			children = (
 				1DA8BABB1C522E5F00D041C5 /* libstdc++.tbd */,
 				1DA8BAB91C522E5600D041C5 /* libz.tbd */,
-				1DA8BAC01C55C4C100D041C5 /* OneAPM.framework */,
 				1DA8BAB71C522E3200D041C5 /* CoreData.framework */,
 				1DA8BAB51C522E2800D041C5 /* CoreTelephony.framework */,
 				1DA8BAB31C522E1F00D041C5 /* SystemConfiguration.framework */,
